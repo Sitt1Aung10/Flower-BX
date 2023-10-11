@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Delivery|Send Luxury Flowers</title>
+    <link rel="icon" type="image/x-icon" href="/flowerBX/peony_primrose_peony_vase_4.jpg">
+
+    <!--font Awesome Link-->
+    <script src="https://kit.fontawesome.com/8cbc109b9d.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        /*Global Selectors Section*/
+        * {
+            font-size: 0.85rem;
+            font-family: 'Franklin Gothic Medium';
+            color: #3B1500;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #000;
+            font-size: 0.6rem;
+            text-decoration: none;
+            font-family: 'Arial Narrow';
+            letter-spacing: 1px;
+        }
+
+        i {
+            cursor: pointer;
+        }
+
+        li {
+            list-style-type: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            width: fit-content;
+        }
+
+        /*header section start*/
+        header {
+            width: 100%;
+            height: 10rem;
+            position: sticky;
+            top: 0;
+            padding-top: 1rem;
+            background-color: #fff;
+            box-shadow: 1px 3px 3px #00000033;
+            z-index: 10;
+        }
+
+        header>div:first-child,
+        .search_box,
+        nav>ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
+
+        .showAndHide {
+            display: block !important;
+        }
+
+        header>div:first-child {
+            gap: 5rem;
+            padding: 0 2rem;
+            margin-top: 0rem;
+        }
+
+        .logo {
+            width: 17rem;
+            min-width: 5rem;
+        }
+
+        .search_box {
+            gap: 2.5rem;
+        }
+
+        /*nav*/
+        .nav {
+            width: fit-content;
+            height: auto;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: .5rem;
+            padding: 0 10rem;
+            position: relative;
+        }
+
+        .decorativeList {
+            color: #3B1500;
+            position: relative;
+            width: fit-content;
+        }
+
+        .decorativeList::before {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #3B1500;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            transform: scale(0);
+            transition: transform 0.1s ease-in;
+        }
+
+        .decorativeList:hover::before {
+            transform: scale(1);
+        }
+
+        /*bar icon*/
+        .fa-bars {
+            display: none;
+            font-size: 1.5rem;
+            padding: .5rem;
+            position: fixed;
+            left: 0;
+            top: 5rem;
+        }
+
+        /*header section end*/
+
+        /*Slider Section and brands collection section Start*/
+        .slider_section,
+        .brands_collection {
+            width: 100%;
+        }
+
+        .slider_section>a,
+        .slider_section>a>img,
+        .brands_collection>a,
+        .brands_collection>a>img {
+            width: inherit;
+        }
+
+        .Hero_Banner_subscription_DESKTOP {
+            width: inherit;
+        }
+
+        /*Slider Section End*/
+
+        /*shopping section start*/
+        .mainContainer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem !important;
+            padding: 0 .5rem;
+            box-sizing: border-box;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            margin: 0 auto;
+        }
+
+        .productItemContainer {
+            width: 23.5vw;
+            height: 24vw;
+            position: relative;
+        }
+
+        .productName {
+            font-family: 'Arial Narrow';
+            position: absolute;
+            top: 1rem;
+            left: 0;
+        }
+
+        .linkForSliderSection {
+            border: 1px solid black;
+            padding-inline: 15px;
+            position: absolute;
+            bottom: 0rem;
+            right: 0;
+            transition: all 0.1s ease-in;
+        }
+
+        .linkForSliderSection:hover {
+            color: #fff;
+            background-color: #3B1500;
+        }
+
+        .productImage {
+            width: inherit;
+            /* min-width: 10rem; */
+            height: inherit;
+            border: 1px solid rgba(0, 0, 0, 0.205);
+        }
+
+        /*shopping section end*/
+
+        /*section four block and section sixth block*/
+        .section_four_block_desktop,
+        .section_sixth_block_desktop {
+            width: 100%;
+            height: auto;
+            margin-top: 4rem;
+        }
+
+        .section_four_block_desktop>a,
+        .section_sxith_block_desktop>a,
+        .section_four_block_desktop>a>img,
+        .section_sixth_block_desktop>a>img {
+            width: 100%;
+        }
+
+        /*shop*/
+        .decorativeImg {
+            width: 27vw;
+            height: 37vw;
+        }
+
+        .decorativeShop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 2vw;
+            box-sizing: border-box;
+            margin-top: 1rem;
+        }
+
+        .about_section {
+            padding: 0 2vw;
+            box-sizing: border-box;
+            margin-top: 2rem;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .content>p {
+            font-family: 'Arial Narrow';
+        }
+
+        .content+div {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .content+div>img {
+            width: 50%;
+        }
+
+        /*footer*/
+        footer {
+            width: 100%;
+            height: auto;
+            background-color: #F5F5F5;
+            padding-top: 4rem;
+            box-sizing: border-box;
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: repeat(3, 25rem);
+            justify-content: space-around;
+        }
+
+        .unorderListForShortcut {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            text-transform: capitalize;
+            padding-inline-start: 0;
+        }
+
+        .popular_shortcut_section {
+            position: relative;
+        }
+
+        .popular_shortcut_section::before {
+            content: "POPULAR SHORTCUTS";
+        }
+
+        .email_section::before {
+            content: "SIGN UP TO RECEIVE LOYALTY REWARDS & £10 OFF YOUR FIRST PURCHAS";
+        }
+
+        .question_section::before {
+            content: "do you have a question?";
+        }
+
+        .popular_shortcut_section::before,
+        .question_section::before,
+        .email_section::before {
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            opacity: .8;
+            position: absolute;
+            top: -2rem;
+
+        }
+
+        /*email section*/
+        .question_section {
+            position: relative;
+        }
+
+        .email_section {
+            position: relative;
+        }
+
+        input[type=email] {
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+            margin-top: 2rem;
+        }
+
+        .ask_why {
+            display: block;
+            width: 11rem;
+            padding: 1.5rem 2rem;
+            box-sizing: border-box;
+            font-size: 1rem;
+            text-transform: capitalize;
+            color: #fff;
+            background-color: #211000;
+            border-radius: .5rem;
+            text-align: center;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .fa-message {
+            color: #fff;
+            margin-right: .3rem;
+        }
+
+        @media (max-width:1400px) {
+
+            /*nav*/
+            header {
+                height: 5rem;
+                padding-bottom: 2rem;
+                box-shadow: 1px 3px 5px #00000033;
+            }
+
+            nav {
+                display: none !important;
+                padding: 0rem 1rem !important;
+                height: calc(100vh - 10vh) !important;
+                background-color: #fff;
+                position: fixed;
+                left: 0;
+                top: 0rem;
+            }
+
+            nav>ul,
+            nav>li {
+                width: inherit;
+            }
+
+            .decorativeList::before {
+                width: 0;
+            }
+
+            .fa-bars {
+                display: block;
+            }
+
+            /*footer*/
+            footer {
+                grid-template-columns: repeat(2, 25rem);
+            }
+        }
+
+        @media (max-width:992px) {
+            footer {
+                grid-template-columns: 25rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="delivery_link">
+                <a href="">SELECT YOUR DELIVERY ADDRESS</a>
+            </div>
+            <img class="logo" src="/flowerBX/logo.svg" alt="FlowerBX">
+            <div class="search_box">
+                <i title="Search Flowers" class="fa-solid fa-magnifying-glass"></i>
+                <i title="Log In" class="fa-solid fa-user"></i>
+                <i title="Your Kit" class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+        <nav>
+            <script>
+                const lists = [
+                    {
+                        id: 1,
+                        title: "flowers",
+                    },
+                    {
+                        id: 2,
+                        title: "espress",
+                    },
+                    {
+                        id: 3,
+                        title: "peonies",
+                    },
+                    {
+                        id: 4,
+                        title: "flowers",
+                    },
+                    {
+                        id: 5,
+                        title: "gift sets",
+                    },
+                    {
+                        id: 6,
+                        title: "occassions",
+                    },
+                    {
+                        id: 7,
+                        title: "vase and accessories",
+                    },
+                    {
+                        id: 7,
+                        title: "subscription",
+                    },
+                ]
+                for (var i = 0; i < lists.length; i++) {
+                    let currentList = lists[i];
+
+                    let nav = document.querySelector("nav");
+                    nav.classList.add("nav");
+
+                    const listItemContainer = document.createElement("li");
+                    listItemContainer.classList.add("decorativeList")
+                    listItemContainer.title = currentList.title;
+                    listItemContainer.append(listItemContainer.title);
+
+                    let unorderList = document.createElement("ul");
+                    unorderList.append(listItemContainer);
+                    unorderList.classList.add("unorderList");
+
+                    nav.append(unorderList, listItemContainer);
+
+                }
+            </script>
+        </nav>
+        <!--bar icon-->
+        <i class="fa-solid fa-bars"></i>
+        <script>
+            const bar_icon = document.querySelector(".fa-bars");
+            const nav = document.querySelector(".nav")
+            bar_icon.onclick = () => {
+                nav.classList.toggle("showAndHide");
+                bar_icon.classList.toggle("fa-xmark");
+            }
+        </script>
+    </header>
+
+    <main>
+        <!--slider_section start-->
+        <section class="slider_section" style="margin-top: 1rem;">
+            <a href="https://www.flowerbx.com/flower-subscription">
+                <img class="Hero_Banner_subscription_DESKTOP" src="/flowerBX/Hero_Banner_subscription_DESKTOP.jpg">
+            </a>
+        </section>
+        <!--slider_section end-->
+
+        <!--brands_collection section start-->
+        <section class="brands_collection">
+            <a href="https://www.flowerbx.com/flowers"><img src="/flowerBX/PRESS_LOGOS (1).jpg"></a>
+        </section>
+        <!--brands_collection section end-->
+
+        <!--shopping_section start-->
+        <section class="shopping_section">
+            FRESH PICKS: OUR TOP RECOMMENDATIONS OF THE WEEK
+            <div class="mainContainer">
+                <script>
+                    const products = [
+                        {
+                            id: 1,
+                            title: "BOUDOR PEONY",
+                            image: "peony_boudoir_peony_vase1_2 (1).jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 2,
+                            title: "FRAMBOISE FRENCH PEONY",
+                            image: "peony_boudoir_peony_vase1_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 3,
+                            title: "PRIMROSE FRENCH PEONY",
+                            image: "peony_carnival_peony_vase1_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 4,
+                            title: "LIL DARLING FRENCH PEONY",
+                            image: "peony_cotton_cloud_peony_wrap_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 5,
+                            title: "CARNIVAL FRENCH PEONY",
+                            image: "peony_flamingo_peony_wrap_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 6,
+                            title: "FLAMINGO FRENCH PONY",
+                            image: "peony_framboise_peony_vase1_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 7,
+                            title: "COTTON CLOUD FRENCH PEONY",
+                            image: "peony_lil_darling_peony_vase1_2 (1).jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 8,
+                            title: "PEONY SCENTED CANDLE",
+                            image: "peony_lil_darling_peony_vase1_2.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                        {
+                            id: 9,
+                            title: "ROYAL WINDSORE VASE",
+                            image: "peony_primrose_peony_vase_4.jpg",
+                            link: "https://www.flowerbx.com/boudoir-peony",
+                        },
+                    ]
+
+                    for (var i = 0; i < products.length; i++) {
+                        let currentProducts = products[i];
+                        // console.log("Showing the current product id",currentProducts.id,currentProducts.title); 
+                        let mainContainerTag = document.querySelector(".mainContainer")
+
+                        const productItemContainer = document.createElement("div");
+                        productItemContainer.id = currentProducts.id;
+                        productItemContainer.classList.add("productItemContainer");
+
+                        const productName = document.createElement("div");
+                        productName.classList.add("productName");
+                        productName.append(currentProducts.title);
+
+                        const links = document.createElement("a");
+                        const currentLink = currentProducts.link;
+                        links.innerHTML = "Buy Flower";
+                        links.classList.add("linkForSliderSection")
+                        links.href = currentLink;
+
+                        const productImage = document.createElement("img");
+                        productImage.classList.add("productImage");
+                        productImage.src = currentProducts.image;
+
+                        productItemContainer.append(productName, productImage, links);
+                        mainContainerTag.append(productItemContainer);
+                    }
+                </script>
+            </div>
+        </section>
+        <!--shopping_section end-->
+
+        <!--section four block desktop-->
+        <section class="section_four_block_desktop">
+            <a href="https://www.flowerbx.com/flowers">
+                <img class="section_four_img" src="/flowerBX/SECTION_FOUR_BLOCK_DESKTOP-min.jpeg">
+            </a>
+        </section>
+
+        <section class="shop">
+            <script>
+
+                const productsForShop = [
+                    {
+                        id: 1,
+                        image: "Group_487.jpg",
+                        link: "https://www.flowerbx.com/flowers/peonies",
+                    },
+                    {
+                        id: 2,
+                        image: "Group_488.jpg",
+                        link: "https://www.flowerbx.com/flowers/peonies",
+                    },
+                    {
+                        id: 3,
+                        image: "Group_489.jpg",
+                        link: "https://www.flowerbx.com/flowers/peonies",
+                    }
+                ]
+                for (var i = 0; i < productsForShop.length; i++) {
+                    let currentImg = productsForShop[i];
+                    let shop = document.querySelector(".shop");
+
+                    const linkForImg = document.createElement("a");
+                    linkForImg.href = currentImg.link;
+
+                    const imgContainer = document.createElement("img");
+                    imgContainer.classList.add("decorativeImg");
+
+                    imgContainer.id = currentImg.id;
+                    imgContainer.src = currentImg.image;
+                    imgContainer.append(currentImg.id, currentImg.image, currentImg.link);
+
+                    linkForImg.append(imgContainer)
+
+                    shop.classList.add("decorativeShop")
+                    shop.append(linkForImg);
+                }
+            </script>
+        </section>
+
+        <section class="section_sixth_block_desktop">
+            <a href="https://www.flowerbx.com/flowers">
+                <img class="section_sixth_img" src="/flowerBX/Group_372_1.jpg">
+            </a>
+        </section>
+
+        <section class="about_section">
+            <div class="content">
+                <h1>LUXURY FLOWER DELIVERY: ABOUT FLOWERBX</h1>
+                <p>At FLOWERBX, we deliver fresh, seasonal, high-quality flowers to your doorstep, with reliable flower
+                    delivery options 7 days a week, including UK nationwide next-day and same-day delivery in London.
+                    Order flowers online with us, and you will always receive exquisite flowers, whether they are for
+                    your home or sent as a gift. Discover our range.</p>
+            </div>
+            <div>
+                <img src="/flowerBX/Mask_group-1_1-min.jpeg">
+                <img src="/flowerBX/Mask_group_1-min.jpeg">
+            </div>
+        </section>
+
+        <!--footer-->
+        <footer>
+            <div class="popular_shortcut_section">
+                <script>
+                    const popular_shortcut_section = document.querySelector(".popular_shortcut_section");
+                    const popular_shortcut = [
+                        {
+                            title: "about us",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "how to start your gift subscription",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "wedding by flowerbx",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "editorial",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "our mission",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "contact us",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "faqs",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "delivery",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "terms & conditions",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "privacy & cookies",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "corporate & events",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "refer a friend",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                        {
+                            title: "carrers",
+                            href: "https://www.flowerbx.com/start-your-subscription",
+                        },
+                    ]
+                    const unorderListForShortcut = document.createElement("ul");
+                    unorderListForShortcut.classList.add("unorderListForShortcut")
+                    for (let i = 0; i < popular_shortcut.length; i++) {
+                        const linkForShortcut = document.createElement("a");
+                        linkForShortcut.href = popular_shortcut[i].href;
+
+                        const listForShortcut = document.createElement("li");
+                        listForShortcut.innerHTML = popular_shortcut[i].title;
+                        listForShortcut.append(linkForShortcut);
+
+                        unorderListForShortcut.append(listForShortcut);
+
+                        popular_shortcut_section.append(unorderListForShortcut)
+                    }
+                </script>
+            </div>
+            <div class="email_section">
+                <input type="email" placeholder="Enter Your Email Address" required>
+                <p>CONNECT WITH US ON SOCIAL</p>
+                <a style="font-size: .8rem;" href="https://www.instagram.com/theflowerbx/?hl=en"><i
+                        class="fa-brands fa-instagram"></i>FowerBX</a>
+            </div>
+
+            <div class="question_section">
+                <p>Do you have a special request? Or are you in doubt about something? Send a message to our Customer
+                    Support Team, who will do their best to reply as soon as possible.</p>
+                <a class="ask_why" href="#"><i class="fa-solid fa-message"></i>Ask Why?</a>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>
